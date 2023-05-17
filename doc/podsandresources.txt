@@ -1,0 +1,44 @@
+history 
+
+  202  nano Dockerfile
+  203  docker build . -t gcr.io/k8s-k3s/demo:v2.0.0
+  204  docker push gcr.io/k8s-k3s/demo:v2.0.0
+  205  gcloud config get-value project
+  206  gcloud projects add-iam-policy-binding unique-dialect-381214 --member=user:mirik12mirik@gmail.com --role=roles/storage.objectViewer
+  207  docker push gcr.io/k8s-k3s/demo:v2.0.0
+  208  docker push gcr.io/unique-dialect-381214/demo:v2.0.0
+  209  docker push gcr.io/k8s-k3s/demo:v2.0.0
+  210  gcloud container images list --repository=gcr.io/unique-dialect-381214
+  211  gcloud container images list --repository=gcr.io/k8s-k3s
+  212  docker push gcr.io/k8s-k3s/demo:v2.0.0
+  213  docker push gcr.io/unique-dialect-381214/demo:v2.0.0
+  214  docker build -t gcr.io/unique-dialect-381214/demo:v2.0.0 .
+  215  docker push gcr.io/unique-dialect-381214/demo:v2.0.0
+  216  alias k=kubectl
+  217  LB=$(k get svc demo -o jsonpath="{..ingress[0].ip}")
+  218  k set image deploy demo demo=gcr.io/unique-dialect-381214/demo:v2.0.0
+  219  k get deployments.apps -o wide
+  220  k rollout history deploy demo
+  221  k rollout undo deploy demo --to-revision 1
+  222  k set omage deploy demo demo=gcr.io/unique-dialect-381214/demo:v2.0.0 --record
+  223  k set image deploy demo demo=gcr.io/unique-dialect-381214/demo:v2.0.0 --record
+  224  k annotate deploy demo kubernetes.io/change-cause="update to v2.0.0"
+  225  k rollout history deploy demo
+  226  k create deploy demo-2 --image gcr.io/unique-dialect-381214/demo:v2.0.0
+  227  k get po --show-labels
+  228  k get svc -o wide
+  229  k get po -l app=demo
+  230  k label po --all run=demo
+  231  k edit svc demo
+  232  k scale deploy demo --replicas 9
+  233  k get po -w
+  234  k get po -Lapp,run
+  235  k label po --all run=demo
+  236  k get svc -o wide
+  237  k get po -lrun=demo
+  238  k scale deploy demo --replicas 4
+  239  k scale deploy demo --replicas 1
+  240  k scale deploy demo --replicas 0
+  241  k get po -Lapp,run
+  242  asciinema rec
+  243  history
