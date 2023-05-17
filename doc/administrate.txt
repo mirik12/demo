@@ -1,0 +1,45 @@
+ 1042  alias k=kubectl
+ 1043  k api-resources
+ 1044  kubectl config view
+ 1045  minikube start
+ 1046  k api-resources
+ 1047  asciinema rec
+ 1048* k get namespaces -v 8
+ 1049* alias k=kubectl
+ 1050* k get namespaces -v 8
+ 1051* k get namespaces -v 9
+ 1052* k proxy&
+ 1053* curl http://127.0.0.1:8001/api/v1/namespaces
+ 1054* k get componentstatuses
+ 1055* k get --raw='/ready?verbose'
+ 1056* k get --raw='/readyz?verbose'
+ 1057* curl http://127.0.0.1:8001/livez\?verbose
+ 1058* k get ns
+ 1059* k get all -n kube-system
+ 1060* k get ns -o json
+ 1061* k get ns -o ymal
+ 1062* k get ns -o yaml
+ 1063* k run nginx --image nginx --dry-run=client -o yaml
+ 1064* k run nginx --image nginx 
+ 1065* k run nginx --image nginx --dry-run=client -o yaml | tee >nginx-pod.yaml
+ 1066* cat nginx-pod.yaml
+ 1067* k create -f nginx-pod.yaml
+ 1068* k apply -f nginx-pod.yaml
+ 1069* code nginx-pod.yaml
+ 1070* k apply -f nginx-pod.yaml
+ 1071* k get po --show-labels
+ 1072* k create deploy nginx --image nginx
+ 1073* k get all
+ 1074* k get po -o vide --show-labels
+ 1075* k get po -o wide --show-labels
+ 1076* k get rs -o wide --show-labels
+ 1077* k get deploy -o wide --show-labels
+ 1078* k get po -lapp=nginx -Lapp
+ 1079* k delete -f nginx-pod-yaml
+ 1080* k delete -f nginx-pod.yaml
+ 1081* k get po
+ 1082* k delete po nginx-748c667d99-rv8cf --grace-period=o --force
+ 1083* k delete po nginx-748c667d99-rv8cf --grace-period=0 --force
+ 1084* k apply -f - <<EOF\napiVersion: v1\nkind: Pod\nmetadata:\n  creationTimestamp: null\n  labels:\n    run: nginx\n    version: v1.0.0\n  name: nginx\nspec:\n  containers:\n  - image: nginx\n    name: nginx\n    resources: {}\n  dnsPolicy: ClusterFirst\n  restartPolicy: Always\nstatus: {}\n\nEOF
+ 1085* k apply -f https://raw.githubusercontent.com/den-vasyliev/go-demo-app/master/helm/values.yaml
+ 1086* k apply -f https://raw.githubusercontent.com/den-vasyliev/go-demo-app/master/yaml/app.yaml
